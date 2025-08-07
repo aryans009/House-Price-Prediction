@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="relative w-full max-w-3xl bg-white bg-opacity-95 rounded-2xl shadow-2xl p-8 md:p-12">
+            
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">House Price Prediction</h1>
+                <p class="text-lg text-gray-600 mt-2">Enter the property details below</p>
+            </div>
+
+            <form action="result" method="post">
+                {% csrf_token %}
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Avg. Area Income</label>
+                        <input type="text" name="n1" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Avg. Area House Age</label>
+                        <input type="text" name="n2" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Avg. # of Rooms</label>
+                        <input type="text" name="n3" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Avg. # of Bedrooms</label>
+                        <input type="text" name="n4" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Area Population</label>
+                        <input type="text" name="n5" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Predict Price" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer transition duration-300">
+                </div>
+            </form>
+
+            {% if result5 %}
+            <div class="mt-8 text-center bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h2 class="text-2xl font-semibold text-gray-800">Predicted Price: <span class="text-blue-600">{{ result5 }}</span></h2>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</body>
+</html>

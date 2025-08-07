@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="submit"] {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+
+        section {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 50px;
+            width: auto;
+            max-width: 600px;
+            color: black;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section>
+            <h1>Welcome to Aryan's</h1>
+            <h2>House Price Prediction </h2>
+            <form action="predict">
+                <input type="submit" value="Start">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
